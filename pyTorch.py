@@ -30,4 +30,13 @@ for epoch in range(100):
     # step 3:- The Calculus
     loss.backward()
 
+    # step 4 :- Updating the Weight
 
+    with torch.no_grad():
+        w -= learning_rate * w.grad
+        w.grad.zero_()
+
+        if epoch % 20 == 0:
+            print(f"Epoch {epoch}: Weight is now {w.item():.4f}, Loss is {loss.item():.4f}")
+
+print(f"\n Final trained weight : {w.item()}")
