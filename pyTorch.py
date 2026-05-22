@@ -18,4 +18,16 @@ learning_rate = 0.01
 print(f"Initial random weight: {w.item():.4f}")
 
 
+# The Training Loop
+# step 1 :- y = w * x
+for epoch in range(100):
+    y_pred = w * x_data
+
+    # step 1:- The Loss Function: Measuring the error
+
+    loss = torch.mean((y_pred - y_target) ** 2)
+
+    # step 3:- The Calculus
+    loss.backward()
+
 
