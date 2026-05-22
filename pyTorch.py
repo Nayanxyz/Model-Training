@@ -11,4 +11,11 @@ y_target = torch.tensor([3.0, 6.0, 9.0])
 w = torch.tensor([5.0], requires_grad=True)                      # random weight,  requires_grad=True is the most important,
                                                                     # it tells pyTorch's calculus engine to track this variable
 
+#Hyperparameter
+
+learning_rate = 0.01
+
+print(f"Initial random weight: {w.item():.4f}")
+
+
 
