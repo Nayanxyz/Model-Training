@@ -35,3 +35,6 @@ criterion = nn.CrossEntropyLoss()  # Used for categorizing things (like picking 
 # Shape: [Batch: 32, Channels: 1, Height: 28, Width: 28]
 dummy_images = torch.randn(32, 1, 28, 28)
 
+# The correct answers (Pretend these are the actual labels for the 32 images)
+dummy_labels = torch.randint(0, 10, (32,))
+
