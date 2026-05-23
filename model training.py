@@ -38,3 +38,8 @@ dummy_images = torch.randn(32, 1, 28, 28)
 # The correct answers (Pretend these are the actual labels for the 32 images)
 dummy_labels = torch.randint(0, 10, (32,))
 
+# 3. THE TRAINING LOOP (The exact same 4-stroke engine)
+for epoch in range(10):
+    # Stroke 1: Flush the memory
+    optimizer.zero_grad()
+
