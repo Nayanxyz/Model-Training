@@ -31,3 +31,7 @@ model = SimpleImageModel()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 criterion = nn.CrossEntropyLoss()  # Used for categorizing things (like picking 1 out of 10 numbers)
 
+# Mock Data (Pretend the DataLoader handed us 32 images of size 28x28)
+# Shape: [Batch: 32, Channels: 1, Height: 28, Width: 28]
+dummy_images = torch.randn(32, 1, 28, 28)
+
