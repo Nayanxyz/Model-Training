@@ -14,3 +14,15 @@ class SimpleImageModel(nn.Module):
         # Note: 26x26 comes from shrinking the 28x28 image with the 3x3 scanner
         self.decision = nn.Linear(in_features=16 * 26 * 26, out_features=10)
 
+    def forward(self, x):
+        # Step A: Slide the scanner over the image and apply an activation (ReLU)
+        x = torch.relu(self.scanner(x))
+
+        # Step B: Flatten the scanned map into a straight line of numbers
+        x = x.view(x.size(0), -1)
+
+        # Step C: Make the final guess
+        x = self.decision(x)
+        return x
+
+
