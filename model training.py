@@ -50,3 +50,7 @@ for epoch in range(10):
     loss = criterion(guesses, dummy_labels)
     loss.backward()
 
+    # Stroke 4: The Update (Fix the weights)
+    optimizer.step()
+
+    print(f"Epoch {epoch} | Loss: {loss.item():.4f}")
