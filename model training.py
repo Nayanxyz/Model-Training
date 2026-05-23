@@ -43,3 +43,10 @@ for epoch in range(10):
     # Stroke 1: Flush the memory
     optimizer.zero_grad()
 
+    # Stroke 2: The Prediction (Guess the numbers)
+    guesses = model(dummy_images)
+
+    # Stroke 3: The Grade & Calculus (How wrong were the guesses?)
+    loss = criterion(guesses, dummy_labels)
+    loss.backward()
+
