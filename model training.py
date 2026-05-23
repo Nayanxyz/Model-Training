@@ -26,3 +26,8 @@ class SimpleImageModel(nn.Module):
         return x
 
 
+# 2. THE SETUP
+model = SimpleImageModel()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+criterion = nn.CrossEntropyLoss()  # Used for categorizing things (like picking 1 out of 10 numbers)
+
